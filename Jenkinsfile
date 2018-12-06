@@ -1,5 +1,8 @@
 pipeline {
     agent any
+tools {
+        maven 'locoMaven'
+    }	
     stages{
         stage('Build'){
             steps {

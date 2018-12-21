@@ -3,7 +3,6 @@ pipeline {
     stages{
         stage('Build'){
             steps {
-                sh 'source /var/root/.bash.profile'
                 sh 'mvn clean package'
             }
             post {

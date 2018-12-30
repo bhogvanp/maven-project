@@ -9,7 +9,7 @@ pipeline {
         stage('Build'){
             steps {
                 sh 'mvn clean package'
-                sh "docker build . -t tomcatWebApp:1"
+                sh "docker build . -t tomcatwebapp:1"
             }
             post {
                 success {

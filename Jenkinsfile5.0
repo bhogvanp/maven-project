@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+   
+   tools {
+        maven 'locoMaven'
+    }
+    
+    stages{
+        stage('Build'){
+            steps {
+                sh 'mvn clean package'
+                sh "docker build . -t tomcatwebapp:1"
+            }
+            post {
+                success {
+                    echo 'Docker Image has been created .... Now please SPIN UP THE DOCKER CONTAINER FROM TERMINAL'
+                    archiveArtifacts artifacts: '**/target/*.war'
+                }
+            }
+        }
+
+    }
+}

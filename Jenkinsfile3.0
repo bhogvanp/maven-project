@@ -9,7 +9,7 @@ pipeline {
         stage('Build'){
             steps {
                 sh 'mvn clean package'
-                sh "docker login --username bhogvanp --password Newp@\$\$w0rd"
+                sh "docker login --username bhogvanp --password NewP@\$\$w0rd"
                 sh "docker run hello world"
             }
             post {

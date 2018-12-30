@@ -10,7 +10,6 @@ pipeline {
             steps {
                 sh 'mvn clean package'
                 sh "docker run hello world"
-                sh "docker build . -t tomcatWebApp:${env_BUILD_ID}"
             }
             post {
                 success {
